@@ -26,10 +26,10 @@ const MarkdownRender = (props: MarkdownRenderProps) => {
                 components={{
                     hr: Divider,
                     img: ({ src, alt, ...props }) => (
-                        <img src={src && src.startsWith("/") ? assetPath(src) : src} alt={alt ?? ""} {...props} />
+                        <img src={typeof src === "string" && src.startsWith("/") ? assetPath(src) : src} alt={alt ?? ""} {...props} />
                     ),
                     video: ({ src, ...props }) => (
-                        <video src={src && typeof src === "string" && src.startsWith("/") ? assetPath(src) : src} {...props} />
+                        <video src={typeof src === "string" && src.startsWith("/") ? assetPath(src) : src} {...props} />
                     ),
                 }}
             >
