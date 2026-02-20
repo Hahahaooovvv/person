@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // output: "export",
-  // If deploying to https://<username>.github.io/<repo-name>/
-  // set basePath to "/<repo-name>", otherwise remove it.
-  // basePath: "/<repo-name>",
+  output: "export",
+  basePath: "/person",
+  assetPrefix: "/person/",
   images: {
     unoptimized: true, // GitHub Pages doesn't support Next.js Image Optimization
   },
