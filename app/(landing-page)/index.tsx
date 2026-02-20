@@ -48,7 +48,7 @@ const LandingPage = () => {
         onMouseLeave={() => setParticleOpacity(0)}
       >
         {/* Antigravity particles */}
-        {/* <div
+        <div
           className="absolute inset-0 z-[1] pointer-events-none transition-opacity duration-[1.5s] ease-out"
           style={{ width: "100%", height: "100%", opacity: particleOpacity }}
         >
@@ -71,7 +71,7 @@ const LandingPage = () => {
               fieldStrength={4}
             />
           </div>
-        </div> */}
+        </div>
 
         {/* Background video */}
         <video
@@ -298,7 +298,7 @@ const LandingPage = () => {
       </div>
 
       {/* ── Credits section ── */}
-      <div >
+      {/* <div >
         <motion.div
           className="container-small pt-[40px] md:pt-[80px] pb-[64px]"
           initial={{ opacity: 0, y: 40 }}
@@ -348,7 +348,7 @@ const LandingPage = () => {
             </ul>
           </FadeIn>
         </motion.div>
-      </div>
+      </div> */}
       <div className="container-small pt-[40px] md:pt-[80px] pb-[0]">
         <Divider />
       </div>
