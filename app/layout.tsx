@@ -16,7 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `https://hahahaooovvv.github.io${process.env.NEXT_PUBLIC_BASE_PATH}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: "Alex Chen - Researcher. Founder. Builder.",
   description: "Alex Chen - Researcher. Founder. Builder.",
   openGraph: {

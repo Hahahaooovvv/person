@@ -9,6 +9,7 @@ import rehypeRaw from "rehype-raw";
 import rehypeCallout from "./rehypeCallout";
 import rehypeStripCalloutStyles from "./rehypeStripCalloutStyles";
 import { Divider } from "./customComponent";
+import { assetPath } from "@/lib/assetPath";
 import "remark-callouts/styles.css";
 import "./index.css";
 
@@ -24,6 +25,12 @@ const MarkdownRender = (props: MarkdownRenderProps) => {
                 rehypePlugins={[rehypeRaw, rehypeStripCalloutStyles, rehypeCallout, rehypeKatex]}
                 components={{
                     hr: Divider,
+                    img: ({ src, alt, ...props }) => (
+                        <img src={src && src.startsWith("/") ? assetPath(src) : src} alt={alt ?? ""} {...props} />
+                    ),
+                    video: ({ src, ...props }) => (
+                        <video src={src && typeof src === "string" && src.startsWith("/") ? assetPath(src) : src} {...props} />
+                    ),
                 }}
             >
                 {props.markdown}

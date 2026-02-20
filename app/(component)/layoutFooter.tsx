@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 import { Input, Typography } from "antd";
 import { ArrowUpRight } from "lucide-react";
 import { FadeIn, IconBounce, AnimatedDivider } from "./motion";
@@ -18,7 +19,7 @@ export const LayoutFooter = () => {
           style={{
             width: "100vw",
             marginLeft: "calc(-50vw + 50%)",
-            backgroundImage: "url('/home/section_3_back.png')",
+            backgroundImage: `url('${assetPath("/home/section_3_back.png")}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -64,7 +65,7 @@ export const LayoutFooter = () => {
               <IconBounce>
                 <Image
                   className="cursor-pointer"
-                  src="/home/icon_twitter.svg"
+                  src={assetPath("/home/icon_twitter.svg")}
                   width={20}
                   height={20}
                   alt="twitter"
@@ -73,7 +74,7 @@ export const LayoutFooter = () => {
               <IconBounce>
                 <Image
                   className="cursor-pointer"
-                  src="/home/icon_linkedin.svg"
+                  src={assetPath("/home/icon_linkedin.svg")}
                   width={20}
                   height={20}
                   alt="linkedin"
@@ -82,7 +83,7 @@ export const LayoutFooter = () => {
               <IconBounce>
                 <Image
                   className="cursor-pointer"
-                  src="/home/icon_github.svg"
+                  src={assetPath("/home/icon_github.svg")}
                   width={20}
                   height={20}
                   alt="github"

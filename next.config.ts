@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 
+const siteBasePath = "/person";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/person",
-  assetPrefix: "/person/",
+  basePath: siteBasePath,
+  assetPrefix: `${siteBasePath}/`,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: siteBasePath,
+  },
   images: {
     unoptimized: true, // GitHub Pages doesn't support Next.js Image Optimization
   },

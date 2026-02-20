@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 import { Divider, Typography } from "antd";
 import dynamic from "next/dynamic";
 import { FadeIn } from "../(component)/motion";
@@ -75,7 +76,7 @@ const LandingPage = () => {
         {/* Background video */}
         <video
           className="absolute inset-0 z-0 pointer-events-none w-full h-full object-cover"
-          src="/home/hreo_back.mp4"
+          src={assetPath("/home/hreo_back.mp4")}
           autoPlay
           loop
           muted
@@ -162,7 +163,7 @@ const LandingPage = () => {
               >
                 <div className="person_avatar overflow-hidden p-2">
                   <Image
-                    src="/home/person_avatar.png"
+                    src={assetPath("/home/person_avatar.png")}
                     alt=""
                     width={500}
                     height={500}
@@ -201,7 +202,7 @@ const LandingPage = () => {
       </div>
 
       {/* ── Section 2: Entrance animation ── */}
-      <div className="relative h-[100vh] overflow-hidden" style={{ backgroundImage: "url('/home/section_2_back.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <div className="relative h-[100vh] overflow-hidden" style={{ backgroundImage: `url('${assetPath("/home/section_2_back.png")}')`, backgroundSize: "cover", backgroundPosition: "center" }}>
         {/* Beams background — vertical */}
         {/* <div className="absolute inset-0 z-0">
           <Beams
@@ -272,21 +273,21 @@ const LandingPage = () => {
             >
               <Image
                 className="cursor-pointer"
-                src="/home/icon_twitter.svg"
+                src={assetPath("/home/icon_twitter.svg")}
                 width={20}
                 height={20}
                 alt="twitter"
               />
               <Image
                 className="cursor-pointer"
-                src="/home/icon_linkedin.svg"
+                src={assetPath("/home/icon_linkedin.svg")}
                 width={20}
                 height={20}
                 alt="linkedin"
               />
               <Image
                 className="cursor-pointer"
-                src="/home/icon_github.svg"
+                src={assetPath("/home/icon_github.svg")}
                 width={20}
                 height={20}
                 alt="github"
@@ -309,7 +310,7 @@ const LandingPage = () => {
           <FadeIn direction="up" distance={20}>
             <div className="flex items-center gap-[8px]">
               <Image
-                src="/home/icon.svg"
+                src={assetPath("/home/icon.svg")}
                 width={30}
                 height={30}
                 alt="avatar_bg"
